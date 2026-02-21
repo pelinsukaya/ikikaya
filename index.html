@@ -492,11 +492,14 @@
     <div class="disclaimer-overlay" id="disclaimerOverlay" style="display: none; opacity: 0; transform: scale(0.8);">
         <div class="disclaimer-popup">
             <div class="disclaimer-header">
-                <h2 class="text-2xl font-bold mb-2" 
-                    data-lang-en="İkiKaya Law - Disclaimer" 
-                    data-lang-tr="İkiKaya Hukuk - Bilgilendirme">
-                    İkiKaya Law - Disclaimer
-                </h2>
+                <div class="relative mb-2">
+                    <h2 class="text-2xl font-bold text-center" 
+                        data-lang-en="İkiKaya Law - Disclaimer" 
+                        data-lang-tr="İkiKaya Hukuk - Bilgilendirme">
+                        İkiKaya Law - Disclaimer
+                    </h2>
+                    <button id="lang-toggle-disclaimer" class="absolute right-0 top-0 px-3 py-1 rounded bg-white/20 hover:bg-white/30 text-white font-bold text-sm transition-all duration-300">EN</button>
+                </div>
                 <p class="text-sm opacity-90" 
                 data-lang-en="Please read and accept the following terms" 
                 data-lang-tr="Lütfen aşağıdaki şartları okuyup kabul ediniz">
@@ -530,9 +533,9 @@
             </div>
             <div class="disclaimer-buttons">
                 <button class="modern-btn modern-btn-agree" id="agreeBtn" 
-                    data-lang-en="I Read and Accept" 
-                    data-lang-tr="Okudum ve Kabul Ediyorum">
-                    I Read and Accept
+                    data-lang-en="I Accept" 
+                    data-lang-tr="Kabul Ediyorum">
+                    I Accept
                 </button>
             </div>
         </div>
@@ -850,7 +853,6 @@ We believe in building long-term relationships with our clients and provide prev
             <div class="max-w-6xl w-full bg-white rounded-2xl shadow-2xl p-12 scroll-animate">
                 <h2 class="text-4xl font-bold text-center text-navy mb-12 scroll-animate" data-lang-en="Our Team" data-lang-tr="Ekibimiz">Ekibimiz</h2>
                 <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <!-- Founder Profile -->
                     <div class="text-center scroll-animate">
                         <div class="w-72 h-72 mx-auto mb-8 relative group cursor-pointer">
                            <img src="assets/images/alper_kaya.jpeg"
@@ -882,8 +884,13 @@ We believe in building long-term relationships with our clients and provide prev
                                 <li class="flex items-center"><i class="fas fa-check text-gold mr-2"></i><span data-lang-en="Registered with the New York Bar" data-lang-tr="New York Barosu'na Kayıtlı">Registered with the New York Bar</span></li>
                             </ul>
                         </div>
+                        <div class="bg-white p-6 rounded-lg border border-gray-200">
+                           <h4 class="font-bold text-navy mb-3" data-lang-en="Contact Details" data-lang-tr="İletişim Bilgileri">Contact Details</h4>
+                             <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-center"><i class="fas fa-envelope text-gold mr-2"></i><a href="mailto:alper@ikikaya.com" class="hover:text-gold transition" data-lang-en="alper@ikikaya.com" data-lang-tr="alper@ikikaya.com">alper@ikikaya.com</a></li>
+                             </ul>
+                         </div>
                     </div>
-                    <!-- New Person Profile -->
                     <div class="text-center scroll-animate">
                         <div class="w-72 h-72 mx-auto mb-8 relative group cursor-pointer">
                            <img src="assets/images/pelinsu_kaya.jpeg"
@@ -906,7 +913,7 @@ We believe in building long-term relationships with our clients and provide prev
                         </p>
                         <div class="bg-gray-50 p-6 rounded-lg mb-6">
                             <ul class="space-y-2 text-gray-700">
-                                <li class="flex items-center"><i class="fas fa-check text-gold mr-2"></i><span data-lang-en="Istanbul Bar Association — Licensed Attorney (Dec 2023)" data-lang-tr="İstanbul Barosu — Ruhsat (Aralık 2023)">Istanbul Bar Association — Licensed Attorney (Dec 2023)</span></li>
+                                <li class="flex items-center"><i class="fas fa-check text-gold mr-2"></i><span data-lang-en="Istanbul Bar Association — Licensed Attorney (2023 - Present)" data-lang-tr="İstanbul Barosu — Ruhsat (2023 - Halen)">Istanbul Bar Association — Licensed Attorney (2023 - Present)</span></li>
                                 <li class="flex items-center"><i class="fas fa-check text-gold mr-2"></i><span data-lang-en="Yeditepe University Faculty of Law (%25 Merit Scholarship)" data-lang-tr="Yeditepe Üniversitesi Hukuk Fakültesi (%25 Başarı Bursu)">Yeditepe University Faculty of Law (%25 Merit Scholarship)</span></li>
                                 <li class="flex items-center"><i class="fas fa-check text-gold mr-2"></i><span data-lang-en="Anadolu University — Brand Communication" data-lang-tr="Anadolu Üniversitesi — Marka İletişimi">Anadolu University — Brand Communication</span></li>
                                 <li class="flex items-center"><i class="fas fa-check text-gold mr-2"></i><span data-lang-en="International Baccalaureate (IB) Diploma — 35/42" data-lang-tr="International Baccalaureate (IB) Diploması — 35/42">International Baccalaureate (IB) Diploma — 35/42</span></li>
@@ -914,6 +921,12 @@ We believe in building long-term relationships with our clients and provide prev
                                 <li class="flex items-center"><i class="fas fa-check text-gold mr-2"></i><span data-lang-en="Speaker: Kadir Has University Social Media Law Seminar (2025)" data-lang-tr="Konuşmacı: Kadir Has Üniversitesi Sosyal Medya Hukuku Semineri (2025)">Speaker: Kadir Has University Social Media Law Seminar (2025)</span></li>
                             </ul>
                         </div>
+                         <div class="bg-white p-6 rounded-lg border border-gray-200">
+                           <h4 class="font-bold text-navy mb-3" data-lang-en="Contact Details" data-lang-tr="İletişim Bilgileri">Contact Details</h4>
+                             <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-center"><i class="fas fa-envelope text-gold mr-2"></i><a href="mailto:avukatpelinsukaya@gmail.com" class="hover:text-gold transition" data-lang-en="avukatpelinsukaya@gmail.com" data-lang-tr="avukatpelinsukaya@gmail.com">avukatpelinsukaya@gmail.com</a></li>
+                             </ul>
+                         </div>
                     </div>
                     </div>
                 </div>
@@ -1290,11 +1303,32 @@ We believe in building long-term relationships with our clients and provide prev
                 });
             }
             // Set Turkish as default language on page load
-            setLanguage('tr');
-            document.getElementById('lang-en').addEventListener('click', function() { setLanguage('en'); });
-            document.getElementById('lang-tr').addEventListener('click', function() { setLanguage('tr'); });
+            let currentLang = 'tr';
+            setLanguage(currentLang);
+            
+            // Language button event listeners
+            const langEnBtn = document.getElementById('lang-en');
+            const langTrBtn = document.getElementById('lang-tr');
+            if (langEnBtn) langEnBtn.addEventListener('click', function() { setLanguage('en'); });
+            if (langTrBtn) langTrBtn.addEventListener('click', function() { setLanguage('tr'); });
+            
             document.getElementById('lang-en-mobile').addEventListener('click', function() { setLanguage('en'); });
             document.getElementById('lang-tr-mobile').addEventListener('click', function() { setLanguage('tr'); });
+            
+            const langEnMobileBtn = document.getElementById('lang-en-mobile-btn');
+            const langTrMobileBtn = document.getElementById('lang-tr-mobile-btn');
+            if (langEnMobileBtn) langEnMobileBtn.addEventListener('click', function() { setLanguage('en'); });
+            if (langTrMobileBtn) langTrMobileBtn.addEventListener('click', function() { setLanguage('tr'); });
+            
+            // Disclaimer popup language toggle button
+            const langToggleDisclaimer = document.getElementById('lang-toggle-disclaimer');
+            if (langToggleDisclaimer) {
+                langToggleDisclaimer.addEventListener('click', function() {
+                    currentLang = currentLang === 'tr' ? 'en' : 'tr';
+                    setLanguage(currentLang);
+                    langToggleDisclaimer.textContent = currentLang === 'tr' ? 'EN' : 'TR';
+                });
+            }
         });
 
         // Disclaimer Popup Script
