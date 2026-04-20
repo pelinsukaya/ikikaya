@@ -961,7 +961,7 @@ We believe in building long-term relationships with our clients and provide prev
                                 <div>
                                     <div class="font-semibold" data-lang-en="Call Us" data-lang-tr="Bizi Arayın">Call Us</div>
                                     <div class="text-gray-300"><a href="tel:+902163305658" class="text-gray-300 hover:underline">+902163305658</a></div>
-                                    <div class="text-gray-300"><a href="tel:+905059214709" class="text-gray-300 hover:underline">+905059214709</a></div>
+                                   <!-- <div class="text-gray-300"><a href="tel:+905059214709" class="text-gray-300 hover:underline">+905059214709</a></div>  -->
                                 </div>
                             </div>
                             <div class="flex items-center">
@@ -1021,9 +1021,9 @@ We believe in building long-term relationships with our clients and provide prev
                                 <label class="block text-white font-semibold mb-2" data-lang-en="Message" data-lang-tr="Mesaj">Message</label>
                                 <textarea id="message" rows="4" class="w-full p-4 bg-white/10 border border-white/30 rounded-lg focus:border-gold focus:outline-none text-white placeholder-gray-300"></textarea>
                             </div>
-                            <button type="submit" class="modern-btn modern-btn-lg modern-btn-full modern-btn-whatsapp flex items-center justify-center" data-lang-en="Send via WhatsApp" data-lang-tr="WhatsApp ile Gönder">
-                                <i class="fab fa-whatsapp mr-2 text-xl"></i>
-                                Send via WhatsApp
+                            <button type="submit" class="modern-btn modern-btn-lg modern-btn-full modern-btn-whatsapp flex items-center justify-center" data-lang-en="Send Email" data-lang-tr="Mail Gönder">
+                                <i class="fas fa-envelope mr-2 text-xl"></i>
+                                Send Email
                             </button>
                         </form>
                     </div>
@@ -1047,7 +1047,7 @@ We believe in building long-term relationships with our clients and provide prev
                     <div class="space-y-2 text-gray-700">
                         <p data-lang-en="Dudullu Cad No:23-25 Brandium Residence R2 K28 D258 Ataşehir İstanbul" data-lang-tr="Dudullu Cad No:23-25 Brandium Residence R2 K28 D258 Ataşehir İstanbul"><i class="fas fa-map-marker-alt mr-2 text-gold"></i>Dudullu Cad No:23-25 Brandium Residence R2 K28 D258 Ataşehir İstanbul</p>
                         <p><i class="fas fa-phone mr-2 text-gold"></i><a href="tel:+902163305658" class="hover:text-navy transition" data-lang-en="+902163305658" data-lang-tr="+902163305658">+902163305658</a></p>
-                        <p><i class="fas fa-phone mr-2 text-gold"></i><a href="tel:+905059214709" class="hover:text-navy transition" data-lang-en="+905059214709" data-lang-tr="+905059214709">+905059214709</a></p>
+                        <!-- <p><i class="fas fa-phone mr-2 text-gold"></i><a href="tel:+905059214709" class="hover:text-navy transition" data-lang-en="+905059214709" data-lang-tr="+905059214709">+905059214709</a></p> -->
                         <p><i class="fas fa-envelope mr-2 text-gold"></i><a href="mailto:info@ikikaya.com" class="hover:text-navy transition" data-lang-en="info@ikikaya.com" data-lang-tr="info@ikikaya.com">info@ikikaya.com</a></p>
                     </div>
                 </div>
@@ -1082,10 +1082,12 @@ We believe in building long-term relationships with our clients and provide prev
     </footer>
 
     <!-- Floating WhatsApp Button -->
+    <!--
     <a id="floating-whatsapp" href="https://wa.me/905059214709" target="_blank"
        class="fixed bottom-6 right-6 w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-full shadow-2xl hover:from-green-600 hover:to-green-700 hover:scale-110 transition-all duration-300 z-50 flex items-center justify-center animate-pulse">
         <i class="fab fa-whatsapp text-3xl"></i>
     </a>
+    -->
 
     <script>
         // Mobile Menu Toggle
@@ -1252,7 +1254,7 @@ We believe in building long-term relationships with our clients and provide prev
         // Initialize scroll animations
         initScrollAnimations();
 
-        // WhatsApp Form Submission
+        // Email Form Submission
         document.getElementById('appointment-form').addEventListener('submit', function(e) {
             e.preventDefault();
 
@@ -1262,15 +1264,20 @@ We believe in building long-term relationships with our clients and provide prev
             const message = document.getElementById('message').value;
 
             const currentLang = localStorage.getItem('site-lang') || 'tr';
-            const whatsappTemplates = {
-                en: `*Website Consultation Request*\n\n👤 *Name:* ${name}\n📧 *Email:* ${email}\n📱 *Phone:* ${phone}\n📝 *Message:* ${message}`,
-                tr: `*Web Sitesi Danışmanlık Talebi*\n\n👤 *Ad:* ${name}\n📧 *E-posta:* ${email}\n📱 *Telefon:* ${phone}\n📝 *Mesaj:* ${message}`
+            const subjects = {
+                en: 'Consultation Request',
+                tr: 'Danışmanlık Talebi'
             };
-            const whatsappNumber = '905059214709';
-            const whatsappMessage = whatsappTemplates[currentLang] || whatsappTemplates.tr;
-            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+            const bodies = {
+                en: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`,
+                tr: `Ad: ${name}\nE-posta: ${email}\nTelefon: ${phone}\nMesaj: ${message}`
+            };
+            const recipient = 'info@ikikaya.com';
+            const subject = subjects[currentLang] || subjects.tr;
+            const body = bodies[currentLang] || bodies.tr;
+            const mailtoURL = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-            window.open(whatsappURL, '_blank');
+            window.location.href = mailtoURL;
         });
 
         // Smooth scroll for navigation links
